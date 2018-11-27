@@ -1,22 +1,3 @@
-// import { Injectable } from "@angular/core";
-// import { CredenciaisDTO } from "../models/credenciais.dto";
-// import { HttpClient } from "@angular/common/http";
-
-// @Injectable()
-
-// export class AuthService {
-
-//     constructor(public http: HttpClient){}
-
-//     authenticate(creds: CredenciaisDTO) {
-//         return this.http.post(`api/login`, 
-//             creds,
-//             {
-//                 // observe: 'reponse',
-//                 // responseType: 'type'
-//             })
-//     }
-// }
 
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';

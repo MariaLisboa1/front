@@ -13,7 +13,6 @@ export class ApiProvider {
   }
 
   moviePopular(){
-    // return this.http.get(this.url + "/movie/popular?api_key=" + this.apiKey)
     return this.http.get(`${this.UrlApi}/movie/popular?api_key=${this.apiKey}`)
   }
 
