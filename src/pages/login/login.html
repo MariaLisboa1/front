@@ -1,0 +1,69 @@
+<!-- <ion-content padding>
+  <h3 text-center>Login</h3>
+
+  <img src="../../assets/imgs/login.png" alt="Logo">
+
+  <form>
+    <ion-item>
+      <ion-label stacked>Email:</ion-label>
+      <ion-input [(ngModel)]="creds.email" name="email" type="text"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label stacked>Senha:</ion-label>
+      <ion-input [(ngModel)]="creds.senha" name="senha" type="password"></ion-input>
+    </ion-item>
+    <br>
+    <button ion-button block (click)="login()">Entrar</button>
+  </form>
+  <button ion-button block outline>Registrar</button>
+</ion-content> -->
+
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>Login</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<form (ngSubmit)="login()" [formGroup]="loginForm">
+		<ion-list inset>
+
+			<ion-item>
+				<ion-input type="text" placeholder="Email" formControlName="email"></ion-input>
+			</ion-item>
+	
+			<ion-item >
+				<ion-input type="password" placeholder="senha" formControlName="password"></ion-input>
+			</ion-item>		
+		</ion-list>
+
+		<div padding-horizontal>
+			<div class="form-error">{{loginError}}</div>
+
+			<button ion-button full type="submit" [disabled]="!loginForm.valid" class="button-logi">Login</button>
+			<div class="login-footer">
+				<p>
+					<a href="#" class="color-red">Esqueceu a senha?</a>
+					Se você não tem conta, por favor se cadastre.
+				</p>
+			</div>
+
+			<ion-list>
+
+				<button ion-button icon-left block clear (click)="loginWithGoogle()" class="color-red">
+					<ion-icon name="logo-google"></ion-icon>
+					Entre com o Google
+				</button>
+
+				<button ion-button icon-left block clear (click)="signup()" class="color-red">
+					<ion-icon name="person-add"></ion-icon>
+					Cadastro
+				</button>
+			</ion-list>
+		</div>
+	</form>
+</ion-content>

@@ -1,0 +1,9 @@
+page-home {
+    ion-scroll[scrollX] {
+        white-space: nowrap;
+    
+        .scroll-item {
+          display: inline-block;
+        }
+      }
+}

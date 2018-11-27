@@ -1,0 +1,104 @@
+<ion-nav [root]="rootPage"></ion-nav>
+<ion-header>
+  <ion-navbar>
+    <ion-title class="cor">Inicio</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <!-- ! -->
+
+
+  <h1 text-center>Popular</h1>
+  <ion-scroll scrollX style="height:300px;">
+
+    <ion-card class="scroll-item" *ngFor="let filmes of lista_filmes_popular">
+      <img [src]="'https://image.tmdb.org/t/p/w500/' + filmes.backdrop_path" />
+
+      <ion-card-content>
+        <ion-card-title>
+          <h2> {{filmes.original_title}}</h2>
+        </ion-card-title>
+        <ion-row no-padding>
+          <ion-col>
+            <button ion-button clear small color="danger" icon-start>
+              <ion-icon name='star'></ion-icon>
+              Favorite
+            </button>
+          </ion-col>
+          <ion-col text-center>
+            <button ion-button clear small color="danger" icon-start (click)="abrirDetalhes(filmes)">
+              <ion-icon name='ios-eye-outline'></ion-icon>
+              Detalhes
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+  </ion-scroll>
+
+  <!-- ! -->
+  <h1 text-center>Mais votados</h1>
+  <ion-scroll scrollX style="height:300px;">
+    <ion-card class="scroll-item" *ngFor="let filme of lista_mais_v">
+      <img [src]="'https://image.tmdb.org/t/p/w500/' + filme.backdrop_path" />
+
+      <ion-card-content>
+        <ion-card-title>
+          <h2> {{filme.original_title}}</h2>
+        </ion-card-title>
+
+        <ion-row no-padding>
+          <ion-col>
+            <button ion-button clear small color="danger" icon-start>
+              <ion-icon name='star'></ion-icon>
+              Favorite
+            </button>
+          </ion-col>
+          <ion-col text-center>
+            <button ion-button clear small color="danger" icon-start (click)="abrirDetalhes(filme)">
+              <ion-icon name='ios-eye-outline'></ion-icon>
+              Detalhes
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </ion-scroll>
+
+  <!-- ! -->
+
+  <!-- <h1 text-center>Mais votado</h1>
+  <ion-card *ngFor="let filme of lista_mais_v">
+
+    <img [src]="'https://image.tmdb.org/t/p/w500/' + filme.backdrop_path" />
+
+    <ion-card-content>
+      <ion-card-title>
+        <h2> {{filme.original_title}}</h2>
+      </ion-card-title>
+    </ion-card-content>
+
+    <ion-row no-padding>
+      <ion-col>
+        <button ion-button clear small color="danger" icon-start>
+          <ion-icon name='star'></ion-icon>
+          Favorite
+        </button>
+      </ion-col>
+      <ion-col text-center>
+        <button ion-button block outline (click)="abrirDetalhes(filmes)">Detalhes</button>
+      </ion-col>
+      <ion-col text-right>
+
+      </ion-col>
+    </ion-row>
+  </ion-card> -->
+
+</ion-content>

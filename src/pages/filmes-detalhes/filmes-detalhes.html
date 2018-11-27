@@ -1,0 +1,42 @@
+<!--
+  Generated template for the FilmeDetalhesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Detalhes</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card *ngIf="filmes">
+    <img [src]="'https://image.tmdb.org/t/p/w500/' + filmes.backdrop_path" />
+    <ion-card-content>
+      <ion-card-title>
+        {{filmes.original_title}}
+      </ion-card-title>
+      <p>
+        {{filmes.overview}}
+      </p>
+      <ion-row no-padding>
+        <ion-col>
+          <button ion-button clear small color="danger" icon-start>
+            <ion-icon name='star'></ion-icon>
+            Favorite
+          </button>
+        </ion-col>
+        <ion-col text-center>
+          <button ion-button clear small color="danger" icon-start >
+            <ion-icon name='ios-thumbs-up-outline'></ion-icon>
+            {{filmes.vote_average}}
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
