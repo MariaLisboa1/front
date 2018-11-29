@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 
-i
 import { HomePage } from '../home/home';
 
 @Component({
